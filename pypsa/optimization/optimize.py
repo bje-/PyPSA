@@ -11,49 +11,37 @@ import numpy as np
 import pandas as pd
 from linopy import Model, merge
 
-from pypsa.descriptors import additional_linkports, get_committable_i, nominal_attrs
+from pypsa.descriptors import additional_linkports, get_committable_i
 from pypsa.descriptors import get_switchable_as_dense as get_as_dense
+from pypsa.descriptors import nominal_attrs
 from pypsa.optimization.abstract import (
-    optimize_mga,
-    optimize_security_constrained,
-    optimize_transmission_expansion_iteratively,
-    optimize_with_rolling_horizon,
-)
+    optimize_mga, optimize_security_constrained,
+    optimize_transmission_expansion_iteratively, optimize_with_rolling_horizon)
 from pypsa.optimization.common import get_strongly_meshed_buses, set_from_frame
 from pypsa.optimization.constraints import (
-    define_fixed_nominal_constraints,
-    define_fixed_operation_constraints,
-    define_kirchhoff_voltage_constraints,
-    define_loss_constraints,
-    define_modular_constraints,
-    define_nodal_balance_constraints,
+    define_fixed_nominal_constraints, define_fixed_operation_constraints,
+    define_kirchhoff_voltage_constraints, define_loss_constraints,
+    define_modular_constraints, define_nodal_balance_constraints,
     define_nominal_constraints_for_extendables,
     define_operational_constraints_for_committables,
     define_operational_constraints_for_extendables,
     define_operational_constraints_for_non_extendables,
-    define_ramp_limit_constraints,
-    define_storage_unit_constraints,
-    define_store_constraints,
-)
+    define_ramp_limit_constraints, define_storage_unit_constraints,
+    define_store_constraints)
 from pypsa.optimization.global_constraints import (
-    define_growth_limit,
-    define_nominal_constraints_per_bus_carrier,
-    define_operational_limit,
-    define_primary_energy_limit,
+    define_growth_limit, define_nominal_constraints_per_bus_carrier,
+    define_operational_limit, define_primary_energy_limit,
     define_tech_capacity_expansion_limit,
     define_transmission_expansion_cost_limit,
-    define_transmission_volume_expansion_limit,
-)
-from pypsa.optimization.variables import (
-    define_loss_variables,
-    define_modular_variables,
-    define_nominal_variables,
-    define_operational_variables,
-    define_shut_down_variables,
-    define_spillage_variables,
-    define_start_up_variables,
-    define_status_variables,
-)
+    define_transmission_volume_expansion_limit)
+from pypsa.optimization.variables import (define_loss_variables,
+                                          define_modular_variables,
+                                          define_nominal_variables,
+                                          define_operational_variables,
+                                          define_shut_down_variables,
+                                          define_spillage_variables,
+                                          define_start_up_variables,
+                                          define_status_variables)
 from pypsa.pf import _as_snapshots
 
 logger = logging.getLogger(__name__)

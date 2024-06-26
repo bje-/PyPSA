@@ -11,14 +11,10 @@ from numpy import inf, isfinite
 from scipy import sparse
 from xarray import DataArray, Dataset, concat
 
-from pypsa.descriptors import (
-    additional_linkports,
-    expand_series,
-    get_activity_mask,
-    get_bounds_pu,
-    nominal_attrs,
-)
+from pypsa.descriptors import (additional_linkports, expand_series,
+                               get_activity_mask, get_bounds_pu)
 from pypsa.descriptors import get_switchable_as_dense as get_as_dense
+from pypsa.descriptors import nominal_attrs
 from pypsa.optimization.common import reindex
 
 logger = logging.getLogger(__name__)
