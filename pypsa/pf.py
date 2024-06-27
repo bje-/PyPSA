@@ -34,12 +34,12 @@ def normed(s):
     return s / s.sum()
 
 
-def real(X):
-    return np.real(X.to_numpy())
+def real(x):
+    return np.real(x.to_numpy())
 
 
-def imag(X):
-    return np.imag(X.to_numpy())
+def imag(x):
+    return np.imag(x.to_numpy())
 
 
 def _as_snapshots(network, snapshots):
