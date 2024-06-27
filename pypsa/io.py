@@ -763,7 +763,7 @@ def _import_from_importer(network, importer, basename, skip_time=False):
         for attr, val in attrs.items():
             setattr(network, attr, val)
 
-    ## https://docs.python.org/3/tutorial/datastructures.html#comparing-sequences-and-other-types
+    # https://docs.python.org/3/tutorial/datastructures.html#comparing-sequences-and-other-types
     if pypsa_version is None or pypsa_version < current_pypsa_version:
         pypsa_version_str = (
             ".".join(map(str, pypsa_version)) if pypsa_version is not None else "?"
@@ -1202,7 +1202,7 @@ def import_from_pypower_ppc(network, ppc, overwrite_zero_s_nom=None):
     pdf["generators"]["bus"] = np.array(ppc["gen"][:, 0], dtype=int)
 
     # add branchs
-    ## branch data
+    # branch data
     # fbus, tbus, r, x, b, rateA, rateB, rateC, ratio, angle, status, angmin, angmax
 
     columns = "bus0, bus1, r, x, b, s_nom, rateB, rateC, tap_ratio, phase_shift, status, v_ang_min, v_ang_max".split(
@@ -1275,8 +1275,8 @@ def import_from_pypower_ppc(network, ppc, overwrite_zero_s_nom=None):
 
     # TODO
 
-    ##-----  OPF Data  -----##
-    ## generator cost data
+    # -----  OPF Data  -----##
+    # generator cost data
     # 1 startup shutdown n x1 y1 ... xn yn
     # 2 startup shutdown n c(n-1) ... c0
 
